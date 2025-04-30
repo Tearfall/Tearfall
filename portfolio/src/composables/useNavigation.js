@@ -1,4 +1,4 @@
-import { ref, onMounted, onUnmounted } from 'vue';
+import {ref, onMounted, onUnmounted} from "vue";
 
 export function useNavigation() {
   const isMenuActive = ref(false);
@@ -12,36 +12,35 @@ export function useNavigation() {
     if (target) {
       window.scrollTo({
         top: target.offsetTop - 60,
-        behavior: 'smooth'
       });
       isMenuActive.value = false;
     }
   };
 
-  const activeSection = ref('');
+  const activeSection = ref("");
 
   const handleScroll = () => {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => {
       const sectionTop = section.offsetTop;
-      if (window.pageYOffset >= (sectionTop - 100)) {
-        activeSection.value = section.getAttribute('id');
+      if (window.pageYOffset >= sectionTop - 100) {
+        activeSection.value = section.getAttribute("id");
       }
     });
   };
 
   onMounted(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
   });
 
   onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener("scroll", handleScroll);
   });
 
   return {
     isMenuActive,
     toggleMenu,
     handleSmoothScroll,
-    activeSection
+    activeSection,
   };
 }

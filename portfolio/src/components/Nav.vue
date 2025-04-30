@@ -4,7 +4,7 @@
       <div class="logo">YourName</div>
       <ul class="nav-links" :class="{active: isMenuActive}">
         <li v-for="link in navLinks" :key="link.href">
-          <a :href="link.href" :class="{active: activeSection === link.href.substring(1)}" @click.prevent="handleSmoothScroll(link.href)">
+          <a :href="link.href" :class="{active: activeSection === link.href.substring(1)}" @click="handleSmoothScroll(link.href)">
             {{ link.text }}
           </a>
         </li>
