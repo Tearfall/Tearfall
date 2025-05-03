@@ -2,8 +2,8 @@
   <div class="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen font-sans text-gray-100">
     <Header :mobileMenuOpen="mobileMenuOpen" @toggle-mobile-menu="toggleMobileMenu" @scroll-to="scrollToSection" />
     <main class="pt-24 pb-12 px-4">
-      <Hero />
-      <About />
+      <Hero @scroll-to="scrollToSection"/>
+      <About @scroll-to="scrollToSection"/>
       <Projects />
       <Contact />
     </main>

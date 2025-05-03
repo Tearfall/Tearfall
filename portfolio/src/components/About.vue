@@ -65,7 +65,7 @@
           </div>
         </div>
         
-        <a href="#contact" class="py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-block mt-4">
+        <a href="#contact" class="py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-block mt-4" @click.prevent="$emit('scroll-to', 'contact')">
           Let's work together
         </a>
       </div>

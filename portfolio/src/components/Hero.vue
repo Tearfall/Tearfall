@@ -8,8 +8,8 @@
       <div class="h-1 w-24 mx-auto bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"></div>
       <p class="text-xl md:text-2xl max-w-2xl mx-auto text-gray-300 leading-relaxed">A passionate web developer specializing in creating beautiful and functional websites.</p>
       <div class="flex flex-wrap justify-center gap-3 pt-6">
-        <a href="#projects" class="py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">View my works</a>
-        <a href="#contact" class="py-3 px-6 bg-gray-700 hover:bg-gray-600 rounded-lg text-white font-medium border border-gray-600 hover:border-gray-500 transition-all duration-300 transform hover:scale-105">Get in touch</a>
+        <a href="#projects" class="py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" @click.prevent="$emit('scroll-to', 'projects')">View my works</a>
+        <a href="#contact" class="py-3 px-6 bg-gray-700 hover:bg-gray-600 rounded-lg text-white font-medium border border-gray-600 hover:border-gray-500 transition-all duration-300 transform hover:scale-105" @click.prevent="$emit('scroll-to', 'contact')">Get in touch</a>
       </div>
       <div class="pt-16">
         <p class="text-gray-400 mb-4">Tech I work with</p>
