@@ -13,12 +13,20 @@
       </div>
       <div class="pt-16">
         <p class="text-gray-400 mb-4">Tech I work with</p>
-        <div class="flex justify-center gap-6 flex-wrap">
-          <div class="bg-gray-800 text-gray-300 py-2 px-4 rounded-lg border border-gray-700 hover:border-blue-500 hover:text-white transition-all duration-300">Vue.js</div>
-          <div class="bg-gray-800 text-gray-300 py-2 px-4 rounded-lg border border-gray-700 hover:border-blue-500 hover:text-white transition-all duration-300">React</div>
-          <div class="bg-gray-800 text-gray-300 py-2 px-4 rounded-lg border border-gray-700 hover:border-blue-500 hover:text-white transition-all duration-300">Tailwind</div>
-          <div class="bg-gray-800 text-gray-300 py-2 px-4 rounded-lg border border-gray-700 hover:border-blue-500 hover:text-white transition-all duration-300">Node.js</div>
-          <div class="bg-gray-800 text-gray-300 py-2 px-4 rounded-lg border border-gray-700 hover:border-blue-500 hover:text-white transition-all duration-300">Firebase</div>
+        <div class="flex justify-center gap-6 flex-wrap text-3xl">
+          <div class="bg-gray-800 text-gray-300 py-2 px-4 rounded-lg border border-gray-700 hover:border-blue-500 hover:text-white transition-all duration-300">
+            <i class="devicon-laravel-original colored"></i>
+          </div>
+          <div class="bg-gray-800 text-gray-300 py-2 px-4 rounded-lg border border-gray-700 hover:border-blue-500 hover:text-white transition-all duration-300">
+            <i class="devicon-vuejs-plain colored"></i></div>
+          <div class="bg-gray-800 text-gray-300 py-2 px-4 rounded-lg border border-gray-700 hover:border-blue-500 hover:text-white transition-all duration-300">
+            <i class="devicon-php-plain colored"></i>
+          </div>
+          <div class="bg-gray-800 text-gray-300 py-2 px-4 rounded-lg border border-gray-700 hover:border-blue-500 hover:text-white transition-all duration-300">
+            <i class="devicon-tailwindcss-original colored"></i>
+          </div>
+          <div class="bg-gray-800 text-gray-300 py-2 px-4 rounded-lg border border-gray-700 hover:border-blue-500 hover:text-white transition-all duration-300">
+            <i class="devicon-bootstrap-plain colored"></i></div>
         </div>
       </div>
     </div>

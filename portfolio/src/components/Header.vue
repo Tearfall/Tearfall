@@ -4,10 +4,10 @@
       <div class="flex justify-between items-center">
         <div class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Joar.dev</div>
         <div class="hidden md:flex space-x-8">
-          <a href="#home" class="text-gray-300 hover:text-white font-medium px-2 py-1 transition-colors duration-300 border-b-2 border-transparent hover:border-blue-500">Home</a>
-          <a href="#about" class="text-gray-300 hover:text-white font-medium px-2 py-1 transition-colors duration-300 border-b-2 border-transparent hover:border-blue-500">About</a>
-          <a href="#projects" class="text-gray-300 hover:text-white font-medium px-2 py-1 transition-colors duration-300 border-b-2 border-transparent hover:border-blue-500">Projects</a>
-          <a href="#contact" class="text-gray-300 hover:text-white font-medium px-2 py-1 transition-colors duration-300 border-b-2 border-transparent hover:border-blue-500">Contact</a>
+          <a href="#home" class="text-gray-300 hover:text-white font-medium px-2 py-1 transition-colors duration-300 border-b-2 border-transparent hover:border-blue-500" @click.prevent="$emit('scroll-to', 'home')">Home</a>
+          <a href="#about" class="text-gray-300 hover:text-white font-medium px-2 py-1 transition-colors duration-300 border-b-2 border-transparent hover:border-blue-500" @click.prevent="$emit('scroll-to', 'about')">About</a>
+          <a href="#projects" class="text-gray-300 hover:text-white font-medium px-2 py-1 transition-colors duration-300 border-b-2 border-transparent hover:border-blue-500" @click.prevent="$emit('scroll-to', 'projects')">Projects</a>
+          <a href="#contact" class="text-gray-300 hover:text-white font-medium px-2 py-1 transition-colors duration-300 border-b-2 border-transparent hover:border-blue-500" @click.prevent="$emit('scroll-to', 'contact')">Contact</a>
         </div>
         <button class="md:hidden focus:outline-none" @click="$emit('toggle-mobile-menu')">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

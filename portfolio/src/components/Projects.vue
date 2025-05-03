@@ -1,48 +1,90 @@
-Projects.vue
 <template>
-  <section id="projects" class="max-w-6xl mx-auto py-16 px-4">
-    <h2 class="text-4xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">My Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div v-for="project in projects" :key="project.id" class="bg-gray-800 p-4 rounded-lg border border-gray-700 hover:shadow-lg transition-all duration-300">
-        <img :src="project.image" :alt="project.title" class="rounded-lg shadow-lg mb-4" />
-        <h3 class="text-xl font-semibold text-gray-100 mb-2">{{ project.title }}</h3>
-        <p class="text-gray-300 text-sm">{{ project.description }}</p>
-        <div class="mt-4">
-          <a :href="project.link" target="_blank" class="py-2 px-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">View Project</a>
+  <!-- Projects Section -->
+  <section id="projects" class="max-w-6xl mx-auto py-24">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold">
+        My Projects
+      </h2>
+      <div class="h-1 w-20 mx-auto bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mt-3 mb-6"></div>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        Here are some of my recent projects. Each one presented unique challenges that helped me grow as a developer.
+      </p>
+    </div>
+    
+    <!-- Project Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project Card 1 -->
+      <div class="bg-gray-800/40 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20">
+        <div class="aspect-video rounded-lg overflow-hidden bg-gray-700 mb-4">
+          <!-- Replace with actual project image -->
+          <div class="h-full w-full flex items-center justify-center text-gray-500">Project Image</div>
+        </div>
+        <h3 class="text-xl font-semibold">E-commerce Website</h3>
+        <p class="text-gray-400 mt-2">A fully responsive online store built with Vue.js and integrated with a headless CMS.</p>
+        <div class="flex gap-2 mt-3">
+          <span class="text-xs font-medium bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Vue</span>
+          <span class="text-xs font-medium bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Tailwind</span>
+          <span class="text-xs font-medium bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Stripe</span>
+        </div>
+        <div class="mt-4 flex gap-3">
+          <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">View Live</a>
+          <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">Source Code</a>
         </div>
       </div>
+      
+      <!-- Project Card 2 -->
+      <div class="bg-gray-800/40 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20">
+        <div class="aspect-video rounded-lg overflow-hidden bg-gray-700 mb-4">
+          <!-- Replace with actual project image -->
+          <div class="h-full w-full flex items-center justify-center text-gray-500">Project Image</div>
+        </div>
+        <h3 class="text-xl font-semibold">Portfolio Dashboard</h3>
+        <p class="text-gray-400 mt-2">A dashboard for tracking investments with real-time data visualization.</p>
+        <div class="flex gap-2 mt-3">
+          <span class="text-xs font-medium bg-gray-700 text-gray-300 px-2 py-1 rounded-full">React</span>
+          <span class="text-xs font-medium bg-gray-700 text-gray-300 px-2 py-1 rounded-full">D3.js</span>
+          <span class="text-xs font-medium bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Firebase</span>
+        </div>
+        <div class="mt-4 flex gap-3">
+          <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">View Live</a>
+          <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">Source Code</a>
+        </div>
+      </div>
+      
+      <!-- Project Card 3 -->
+      <div class="bg-gray-800/40 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20">
+        <div class="aspect-video rounded-lg overflow-hidden bg-gray-700 mb-4">
+          <!-- Replace with actual project image -->
+          <div class="h-full w-full flex items-center justify-center text-gray-500">Project Image</div>
+        </div>
+        <h3 class="text-xl font-semibold">Task Management App</h3>
+        <p class="text-gray-400 mt-2">A collaborative task manager with real-time updates and team features.</p>
+        <div class="flex gap-2 mt-3">
+          <span class="text-xs font-medium bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Vue</span>
+          <span class="text-xs font-medium bg-gray-700 text-gray-300 px-2 py-1 rounded-full">Node.js</span>
+          <span class="text-xs font-medium bg-gray-700 text-gray-300 px-2 py-1 rounded-full">MongoDB</span>
+        </div>
+        <div class="mt-4 flex gap-3">
+          <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">View Live</a>
+          <a href="#" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">Source Code</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-12">
+      <a href="#" class="py-3 px-6 bg-gray-700 hover:bg-gray-600 rounded-lg text-white font-medium border border-gray-600 hover:border-gray-500 transition-all duration-300 transform hover:scale-105">
+        View All Projects
+      </a>
     </div>
   </section>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        projects: [
-          {
-            id: 1,
-            title: "Portfolio Website",
-            description: "A personal portfolio website to showcase my work and skills.",
-            image: "https://via.placeholder.com/300x200",
-            link: "#",
-          },
-          {
-            id: 2,
-            title: "E-commerce App",
-            description: "A fully functional e-commerce application with a shopping cart.",
-            image: "https://via.placeholder.com/300x200",
-            link: "#",
-          },
-          {
-            id: 3,
-            title: "Blog Platform",
-            description: "A blog platform where users can create and share posts.",
-            image: "https://via.placeholder.com/300x200",
-            link: "#",
-          },
-        ],
-      };
-    },
-  };
+export default {
+  data() {
+    return {
+      // Existing data removed as the new structure doesn't use it
+    };
+  },
+};
 </script>

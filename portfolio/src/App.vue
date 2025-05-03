@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen font-sans text-gray-100">
-    <Header :mobileMenuOpen="mobileMenuOpen" @toggle-mobile-menu="toggleMobileMenu" />
+    <Header :mobileMenuOpen="mobileMenuOpen" @toggle-mobile-menu="toggleMobileMenu" @scroll-to="scrollToSection" />
     <main class="pt-24 pb-12 px-4">
       <Hero />
       <About />
@@ -38,6 +38,19 @@
       toggleMobileMenu() {
         this.mobileMenuOpen = !this.mobileMenuOpen;
       },
+      scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offset = 20; 
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      },
     },
   };
 </script>
@@ -58,8 +71,7 @@
   .fade-in {
     animation: fadeIn 0.5s ease-out forwards;
   }
-
-  /* Add animation delay classes for staggered animations */
+    
   .delay-100 {
     animation-delay: 100ms;
   }
