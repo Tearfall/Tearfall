@@ -8,7 +8,7 @@
     </div>
 
     <!-- Project Grid -->
-    <div class="grid grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
       <div class="col-span-1 flex items-start justify-center">
         <ul class="flex-grow-1 flex gap-2 flex-col">
           <li v-for="(project, i) in projects" :key="i" class="text-center text-md font-bold cursor-pointer" @click="selectProject(project)">
@@ -20,7 +20,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-span-3">
+      <div class="col-span-1 md:col-span-3 lg:col-span-3 flex items-start justify-center">
         <ViewProject :project="selectedProject" class="mb-8" />
       </div>
     </div>
