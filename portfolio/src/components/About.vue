@@ -25,7 +25,7 @@
           <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl rounded-tl-sm opacity-100"></div>
           <div class="relative p-[2px] rounded-2xl rounded-tl-sm overflow-hidden">
             <div class="bg-gray-900 bg-opacity-80 p-4 rounded-xl rounded-tl-none">
-              <p class="text-lg text-gray-300 leading-relaxed">I am a web developer with a passion for creating beautiful and functional websites. I am a soon-to-graduate computer science student with a strong foundation in programming and web development. I have experience in building responsive and user-friendly websites using modern technologies.</p>
+              <p class="text-lg text-gray-300 leading-relaxed">I am a soon-to-graduate computer science student with a strong foundation in programming and web development. I have experience in building responsive and user-friendly websites using modern technologies.</p>
             </div>
           </div>
         </div>
