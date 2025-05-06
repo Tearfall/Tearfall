@@ -4,6 +4,7 @@
     <main class="pt-24 pb-12 px-4">
       <Hero @scroll-to="scrollToSection"/>
       <About @scroll-to="scrollToSection"/>
+      <Techs @scroll-to="scrollToSection" />
       <Projects />
       <Contact />
     </main>
@@ -15,6 +16,7 @@
   import Header from "./components/Header.vue";
   import Hero from "./components/Hero.vue";
   import About from "./components/About.vue";
+  import Techs from "./components/Techs.vue";
   import Projects from "./components/Projects.vue";
   import Contact from "./components/Contact.vue";
   import Footer from "./components/Footer.vue";
@@ -25,6 +27,7 @@
       Header,
       Hero,
       About,
+      Techs,
       Projects,
       Contact,
       Footer,
