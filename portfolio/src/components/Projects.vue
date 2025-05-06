@@ -2,85 +2,112 @@
   <!-- Projects Section -->
   <section id="projects" class="max-w-6xl mx-auto py-24">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold">
-        My Projects
-      </h2>
+      <h2 class="text-3xl md:text-4xl font-bold">My Projects</h2>
       <div class="h-1 w-20 mx-auto bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mt-3 mb-6"></div>
-      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-        Here are some of my recent projects. Each one presented unique challenges that helped me grow as a developer.
-      </p>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">Here are some of my recent projects. Each one presented unique challenges that helped me grow as a developer.</p>
     </div>
-    
+
     <!-- Project Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Project Card 1 -->
-      <div v-for="(project, index) in projects" :key="index" class="bg-gray-800/40 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-900/20">
-        <div class="aspect-video rounded-lg overflow-hidden bg-gray-700 mb-4">
-          <!-- Replace with actual project image -->
-          <img v-if="project" :src="project.image" alt="Project Image" class="w-full h-full object-cover" />
-          <!-- Placeholder for project image, replace with actual image source -->
-          <div v-else class="h-full w-full flex items-center justify-center text-gray-500">Project Image</div>
-        </div>
-        <h3 class="text-xl font-semibold">{{ project.title }}</h3>
-        <p class="text-gray-400 mt-2">{{ project.description }}</p>
-        <div class="flex gap-2 mt-3">
-          <span  v-for="(item, index) in project.technologies" :key="index" class="text-xs font-medium bg-gray-700 text-gray-300 px-2 py-1 rounded-full">{{ item }}</span>
-        </div>
-        <div class="mt-4 flex gap-3">
-          <a :href="project.liveLink" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">View Live</a>
-          <a :href="project.sourceCodeLink" class="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">Source Code</a>
-        </div>
+    <div class="grid grid-cols-4 gap-8">
+      <div class="col-span-1 flex items-start justify-center">
+        <ul class="flex-grow-1 flex gap-2 flex-col">
+          <li v-for="(project, i) in projects" :key="i" class="text-center text-md font-bold cursor-pointer" @click="selectProject(project)">
+            <div class="bg-gradient-to-r from-blue-500 to-purple-600 inset-0 rounded-xl opacity-100 p-[2px]">
+              <span :class="['block p-2 rounded-xl transition-all duration-300', selectedProject && selectedProject.title === project.title ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white' : 'bg-gray-900 bg-opacity-80 hover:bg-gray-800']">
+                {{ project.title }}
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-span-3">
+        <ViewProject :project="selectedProject" class="mb-8" />
       </div>
     </div>
-    
-    <!-- <div class="text-center mt-12">
-      <a href="#" class="py-3 px-6 bg-gray-700 hover:bg-gray-600 rounded-lg text-white font-medium border border-gray-600 hover:border-gray-500 transition-all duration-300 transform hover:scale-105">
-        View All Projects
-      </a>
-    </div> -->
   </section>
 </template>
 
 <script>
-import profileImage from "../assets/profile.jpg"; // Import your image here
-export default {
-  data() {
-    return {
-      projects: [
+  import nerdiCover from "@/assets/nerdi/nerdi.png"; // Import your image here
+  import talosCover from "@/assets/talos/ProjectionHistory.png"; // Import your image here
+  import promeeCover from "@/assets/promee/promee.png"; // Import your image here
+  import ViewProject from "./ViewProject.vue";
+  import {ref} from "vue";
+  export default {
+    name: "Projects",
+    components: {
+      ViewProject,
+    },
+    setup() {
+      const projects = [
         {
           title: "Talos",
           description: "Data visualization and analytics platform for institution's strategic planning.",
-          image: profileImage,
+          tags:["Web App",  "Data Visualization", "Analytics"],
+          image: talosCover,
           technologies: ["Vue", "Javascript", "Tailwind", "Firebase"],
           liveLink: "#",
-          sourceCodeLink: "#",
+          github: "#",
+          design:"#"
         },
         {
           title: "Nerdi",
           description: "A mobile studying tool for students with interactive flashcards and quizzes.",
-          image: "path/to/image2.jpg",
-          technologies: ["Android Studio", "Firebase"],
+          tags:["Mobile App", "Flashcards", "Quizzes"],
+          image: nerdiCover,
+          technologies: ["Android Studio", "Firebase", "Java"],
           liveLink: "#",
-          sourceCodeLink: "#",
+          github: "#",
+          design:"#"
         },
         {
           title: "Promee",
           description: "A task management tool integrated with Kanban board and 3-2-1 productivity rule for improved self-productivity and project management.",
-          image: "path/to/image3.jpg",
-          technologies: ["Android Studio", "Firebase"],
+          tags:["Mobile App", "Task Management", "Kanban"],
+          image: promeeCover,
+          technologies: ["Android Studio", "Firebase", "Java"],
           liveLink: "#",
-          sourceCodeLink: "#",
+          github: "#",
+          design:"#"
         },
         {
           title: "Mitolohiya",
+          tags:["Mobile Game", "2D", "Top-down"],
           description: "A mobile game based on Philippine Mythology.",
           image: "path/to/image3.jpg",
-          technologies: ["Unity", "C#"], 
+          technologies: ["Unity", "C#"],
           liveLink: "#",
-          sourceCodeLink: "#",
+          github: "#",
+          design:"#"
         },
-      ],
-    };
-  },
-};
+      ];
+      const selectedProject = ref(projects[0]); // Default to the first project
+
+      function selectProject(project) {
+        selectedProject.value = project;
+      }
+
+      // Auto-select first project when component loads
+      // Uncomment this if you want a project to be selected by default
+      /* 
+      onMounted(() => {
+        if (selectedProject.value === null && props.projects && props.projects.length > 0) {
+          selectProject(props.projects[0]);
+        }
+      });
+      */
+
+      return {
+        selectedProject,
+        selectProject,
+        projects,
+      };
+    },
+    mounted() {
+      // Auto-select first project when component loads
+      if (this.projects && this.projects.length > 0) {
+        this.selectProject(this.projects[0]);
+      }
+    },
+  };
 </script>
