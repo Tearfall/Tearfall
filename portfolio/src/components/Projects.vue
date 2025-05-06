@@ -28,11 +28,11 @@
 </template>
 
 <script>
-  import nerdiCover from "@/assets/nerdi/nerdi.png"; // Import your image here
-  import talosCover from "@/assets/talos/ProjectionHistory.png"; // Import your image here
-  import promeeCover from "@/assets/promee/promee.png"; // Import your image here
+  import nerdiCover from "@/assets/nerdi/nerdi.png"; 
+  import talosCover from "@/assets/talos/ProjectionHistory.png"; 
+  import promeeCover from "@/assets/promee/promee.png"; 
   import ViewProject from "./ViewProject.vue";
-  import {ref} from "vue";
+  import {ref, onMounted} from "vue";
   export default {
     name: "Projects",
     components: {
@@ -81,21 +81,17 @@
           design:"#"
         },
       ];
-      const selectedProject = ref(projects[0]); // Default to the first project
+      const selectedProject = ref(projects[0]); 
 
       function selectProject(project) {
         selectedProject.value = project;
       }
 
-      // Auto-select first project when component loads
-      // Uncomment this if you want a project to be selected by default
-      /* 
       onMounted(() => {
         if (selectedProject.value === null && props.projects && props.projects.length > 0) {
           selectProject(props.projects[0]);
         }
       });
-      */
 
       return {
         selectedProject,
@@ -104,7 +100,6 @@
       };
     },
     mounted() {
-      // Auto-select first project when component loads
       if (this.projects && this.projects.length > 0) {
         this.selectProject(this.projects[0]);
       }

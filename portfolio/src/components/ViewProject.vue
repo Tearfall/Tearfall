@@ -3,7 +3,7 @@
     <div class="overflow-hidden">
       <div>
          <h3 class="text-3xl md:text-4xl font-bold relative">
-          {{project.title   }}
+          {{ project.title }}
           <div class="h-1 w-16 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mt-3"></div>
         </h3>
 
@@ -11,7 +11,7 @@
           <span 
             v-for="(tag, index) in project.tags" 
             :key="index" 
-            class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-medium"
+            class="bg-gray-700 text-gray-100 px-3 py-1 rounded-full text-sm font-medium"
           >
             {{ tag }}
           </span>
@@ -40,7 +40,7 @@
               <li 
                 v-for="(tech, index) in project.technologies" 
                 :key="index"
-                class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm"
+                class="bg-gray-700 text-gray-100 px-3 py-1 rounded-full text-sm"
               >
                 {{ tech }}
               </li>
@@ -59,7 +59,7 @@
               v-if="project.github" 
               :href="project.github" 
               target="_blank" 
-              class="inline-flex items-center justify-center px-5 py-3 bg-gray-100 text-gray-800 font-medium rounded-md transition-all hover:bg-gray-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 w-full"
+              class="inline-flex items-center justify-center px-5 py-3 bg-gray-700 text-gray-100 font-medium rounded-md transition-all hover:bg-gray-600 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 w-full"
             >
               View Source Code
             </a>
@@ -67,7 +67,7 @@
               v-if="project.design" 
               :href="project.design" 
               target="_blank" 
-              class="inline-flex items-center justify-center px-5 py-3 bg-gray-100 text-gray-800 font-medium rounded-md transition-all hover:bg-gray-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 w-full"
+              class="inline-flex items-center justify-center px-5 py-3 bg-gray-700  text-gray-100 font-medium rounded-md transition-all hover:bg-gray-600 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 w-full"
             >
               View Design
             </a>
